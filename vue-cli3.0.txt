@@ -1,0 +1,8 @@
+1.克隆项目：
+git clone https://github.com/yokees/vue3.0Study.git
+
+2.安装插件：
+cnpm install
+
+3.运行项目：
+cnpm run serve
