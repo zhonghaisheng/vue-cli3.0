@@ -37,6 +37,14 @@ export default {
       type: Boolean,
       default: false
     },
+    isCity:{
+      type: Boolean,
+      default: false
+    },
+    isArea:{
+      type: Boolean,
+      default: false
+    },
     isDate:{
       type: Boolean,
       default: false
@@ -70,6 +78,16 @@ export default {
     defaultValue: function () {
       this.transformY = 0
       this.modifyStatus()
+    },
+    isCity:function(){
+      //单独刷新市列表
+      this.transformY = 0
+      this.setMove(0)
+    },
+    isArea:function(){
+      //单独刷新区列表
+      this.transformY = 0
+      this.setMove(0)
     },
     isDate:function(){
       //单独刷新日列表
