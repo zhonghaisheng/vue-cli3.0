@@ -36,6 +36,14 @@ export default {
     isUpdate: {
       type: Boolean,
       default: false
+    },
+    isDate:{
+      type: Boolean,
+      default: false
+    },
+    isDateindex:{
+      type: Number,
+      default: 27
     }
   },
   data () {
@@ -62,6 +70,11 @@ export default {
     defaultValue: function () {
       this.transformY = 0
       this.modifyStatus()
+    },
+    isDate:function(){
+      //单独刷新日列表
+      this.transformY = 0
+      this.setMove(-this.isDateindex * this.lineSpacing)
     }
   },
   methods: {

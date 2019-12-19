@@ -4,7 +4,8 @@
       <router-link to="/">主页</router-link>
       <router-link to="/form">表单</router-link>
       <router-link to="/about/666">VUE</router-link>
-      <router-link to="/picker">picker</router-link>
+      <router-link to="/area-picker">area-picker</router-link>
+      <router-link to="/date-picker">date-picker</router-link>
       <span>
         <a href="https://www.cnblogs.com/ndos/" target="_blank">cnblogs</a>
         <a href="https://github.com/yokees/vue3.0Study" target="_blank">Github</a>

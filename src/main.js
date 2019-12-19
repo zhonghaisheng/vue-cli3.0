@@ -6,8 +6,6 @@ import './registerServiceWorker'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 
-Vue.config.productionTip = false
-
 /* requireComponent 包含基础模块的文件集合 */
 const requireComponent = require.context(
   /* 在 ./components/Base 文件夹中寻找基础模块 */

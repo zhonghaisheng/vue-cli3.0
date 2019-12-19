@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Forms from './views/Forms.vue'
 import Picker from './views/Picker.vue'
+import Picker2 from './views/Picker2.vue'
 import HelloWorld from '@/components/HelloWorld.vue'
 
 Vue.use(Router)
@@ -33,9 +34,13 @@ const router = new Router({
       props: (router) => ({ msg: router.query.msg })
     }]
   }, {
-    path: '/picker',
+    path: '/area-picker',
     name: 'picker',
     component: Picker
+  }, {
+    path: '/date-picker',
+    name: 'picker2',
+    component: Picker2
   }]
 })
 

@@ -18,6 +18,7 @@ const resolve = dir => {
 const BASE_URL = process.env.NODE_ENV === 'production'
   ? '/web'
   : '/'
+const mockIndexData = require("./mock/swipe.json");
 module.exports = {
 //   baseUrl: BASE_URL,
   lintOnSave:false,
@@ -34,25 +35,11 @@ module.exports = {
   outputDir: 'maybe',
   // webpack-dev-server 相关配置
   devServer: {
-    // 设置主机地址
-    host: '0.0.0.0',
-    // 设置默认端口
-    port: 58777,
-    // 设置代理
-    proxy: {
-      '/api': {
-        // 目标 API 地址
-        // 开发环境
-        target: 'http://127.0.0.1/api/',
- 
-        // 如果要代理 websockets
-        ws: false,
-        // 将主机标头的原点更改为目标URL(设置跨域)
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': ''
-        }
+      port: 8080,
+      before(app) {
+          app.get("/news/index", (req, res) => {
+              res.json(mockIndexData);
+          });
       }
-    }
   }
 }

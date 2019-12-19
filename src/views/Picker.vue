@@ -6,8 +6,8 @@
       <div class="nut-actionsheet-mask"></div>
       <div class="inner">
         <div class="title-box">
-          <span class="fl" @click="cancel">取消</span>
-          <span class="fr" @click="confirm">确定</span>
+          <span class="cancel fl" @click="cancel">取消</span>
+          <span class="sure fr" @click="confirm">确定</span>
         </div>
         <div class="main-box">
           <template v-for="(item, index) of listData">
@@ -29,6 +29,8 @@
 <script>
 import nutpickerslot from "@/components/picker-slot";
 import { CITYSDATA } from '@/utils/citydata'
+
+import axios from "axios";
 export default {
   data() {
     return {
@@ -118,6 +120,8 @@ export default {
     }
     console.log('defalut')
     this.defaultData = this.chooseValueData
+
+    this.getHomeData()
   },
   watch: {
     defaultValueData: function() {
@@ -126,6 +130,11 @@ export default {
     }
   },
   methods: {
+    getHomeData() {
+      axios.get("/news/index").then(res => {
+        console.log(res)
+      })
+    },
     pickShowOrHide(){
       this.pickerShow = !this.pickerShow
     },
@@ -216,8 +225,18 @@ export default {
   }
 }
 .title-box{
+  line-height:42px;
   width:100%;
   overflow: hidden;
+}
+.cancel,.sure{
+  padding:0 10px;
+}
+.cancel{
+  color:#f30;
+}
+.sure{
+  color:green;
 }
 .main-box {
   display: flex;
